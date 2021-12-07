@@ -11,7 +11,7 @@ def main():
 	'''
 	cislo, cilova_ciselna_soustava = nactiVstup()
 
-	print(f'Zadane cislo: {cislo}, zaklad vybrane soustavy: {cilova_ciselna_soustava}, prevedene cislo: {preved(cislo, cilova_ciselna_soustava)}')
+	print(f'Zadane cislo: {cislo}, zaklad vybrane soustavy: {cilova_ciselna_soustava}, prevedene cislo: {preved(cislo, cilova_ciselna_soustava)}')  # noqa: E501
 	input('Stisknete ENTER pro ukonceni.')
 
 
@@ -27,7 +27,7 @@ def nactiVstup():
 
 		# kontrola jestli bylo pozadovano vypsani napovedy
 		if args[0] == 'help' or args[0] == '-h':
-			print('Spustte budto s parametry: <cislo> <cilova_ciselna_soustava>(2..32), nebo help (-h) pro vypsani napovedy, nebo bez parametru pro rucni zadani hodnot uzivatelem.') # noqa: E501
+			print('Spustte budto s parametry: <cislo> <cilova_ciselna_soustava>(2..32), nebo help (-h) pro vypsani napovedy, nebo bez parametru pro rucni zadani hodnot uzivatelem.')  # noqa: E501
 			exit(0)
 		else:
 			# nacteni parametru <cislo> a <cilova_ciselna_soustava> pri spusteni programu
@@ -37,7 +37,7 @@ def nactiVstup():
 				if cilova_ciselna_soustava < 2 or cilova_ciselna_soustava > 32:
 					print('Parametr <cilova_ciselna_soustava>(2..32) je mimo povoleny rozsah 3..32.')
 				return cislo, cilova_ciselna_soustava
-			except:
+			except BaseException:
 				print('Nespravne zadane parametry: <cislo> <cilova_ciselna_soustava>(2..32)')
 
 	# nacitani parametru <cislo> od uzivatele
@@ -55,7 +55,7 @@ def zadejCislo():
 			cislo = int(input('Zadejte kladne cele cislo: '))
 			return cislo
 		except BaseException:
-			print('Spatny vstup. Zadejte pouze kladne cele cislo.')	
+			print('Spatny vstup. Zadejte pouze kladne cele cislo.')
 
 
 def zadejSoustava():
@@ -68,7 +68,6 @@ def zadejSoustava():
 			print('Spatny vstup. Zadejte cilovou ciselnou soustavu jako cele kladne cislo.')
 		else:
 			print('Spatny vstup. Zadejte cilovou ciselnou soustavu v rozsahu intervalu (2..32)')
-
 
 
 def preved(cislo: int, cilova_ciselna_soustava: int) -> str:
