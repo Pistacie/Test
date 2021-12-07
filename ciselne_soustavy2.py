@@ -1,18 +1,21 @@
 import sys
+import pytest
 
 # vycet cislic pro soustavy se zakladem 2 az po cislice se zakladem 32
 DIGITS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
+
 def main():
 	'''
-	Program prevede zadane cislo <cislo> z desitkove soustavy do ciselne soustavy se zakladem <cilova_ciselna_soustava>.
+	Program prevede zadane cislo <cislo> z desitkove soustavy
+	do ciselne soustavy se zakladem <cilova_ciselna_soustava>.
 	'''
 	cislo, cilova_ciselna_soustava = nactiVstup()
 
 	print(f'Zadane cislo: {cislo}, zaklad vybrane soustavy: {cilova_ciselna_soustava}, prevedene cislo: {preved(cislo, cilova_ciselna_soustava)}')
 	input('Stisknete ENTER pro ukonceni.')
 
-        
+
 def nactiVstup():
 	'''
 	Metoda nactiVstup nacte parametry <cislo> a <cilova_ciselna_soustava> budto z predanych parametru pri spusteni programu,
@@ -59,6 +62,7 @@ def nactiVstup():
 
 	return cislo, cilova_ciselna_soustava
 
+
 def preved(cislo: int, cilova_ciselna_soustava: int) -> str:
 	'''
 	Metoda preved prevede <cislo> z desitkove soustavy do ciselne soustavy se zakladem <cilova_ciselna_soustava>
@@ -80,9 +84,11 @@ def preved(cislo: int, cilova_ciselna_soustava: int) -> str:
 		vysledek += s
 	return vysledek
 
-def test():
-	assert preved(98,17)=='5D'
-	assert preved(77,3)=='2212'
 
-if __name__=='__main__':
+def test():
+	assert preved(98, 17) == '5D'
+	assert preved(77, 3) == '2212'
+
+
+if __name__ == '__main__':
 	main()
