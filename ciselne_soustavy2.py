@@ -53,7 +53,8 @@ def zadejCislo():
 	while True:
 		try:
 			cislo = int(input('Zadejte kladne cele cislo: '))
-			return cislo
+			if cislo > 0:
+				return cislo
 		except BaseException:
 			print('Spatny vstup. Zadejte pouze kladne cele cislo.')
 
@@ -92,10 +93,20 @@ def preved(cislo: int, cilova_ciselna_soustava: int) -> str:
 	return vysledek
 
 
-def test():
-	assert preved(98, 17) == '5D'
-	assert preved(77, 3) == '2212'
-
-
 if __name__ == '__main__':
 	main()
+
+
+# testy pro pytest
+def testPreved():
+	assert preved(98, 17) == '5D'
+
+
+def testZadejCislo(monkeypatch):
+	monkeypatch.setattr('builtins.input', lambda _: 5)
+	assert zadejCislo() == 5
+
+
+def testZadejSoustava(monkeypatch):
+	monkeypatch.setattr('builtins.input', lambda _: 10)
+	assert zadejSoustava() == 10
