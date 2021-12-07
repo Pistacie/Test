@@ -1,5 +1,4 @@
 import sys
-import pytest
 
 # vycet cislic pro soustavy se zakladem 2 az po cislice se zakladem 32
 DIGITS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
