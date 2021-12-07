@@ -27,7 +27,7 @@ def nactiVstup():
 
 		# kontrola jestli bylo pozadovano vypsani napovedy
 		if args[0] == 'help' or args[0] == '-h':
-			print('Spustte budto s parametry: <cislo> <cilova_ciselna_soustava>(2..32), nebo help (-h) pro vypsani napovedy, nebo bez parametru pro rucni zadani hodnot uzivatelem.')
+			print('Spustte budto s parametry: <cislo> <cilova_ciselna_soustava>(2..32), nebo help (-h) pro vypsani napovedy, nebo bez parametru pro rucni zadani hodnot uzivatelem.') # noqa: E501
 			exit(0)
 		else:
 			# nacteni parametru <cislo> a <cilova_ciselna_soustava> pri spusteni programu
@@ -42,9 +42,8 @@ def nactiVstup():
 
 	# nacitani parametru <cislo> od uzivatele
 	cislo = zadejCislo()
-	
 
-	# nacitani parametru <cilova_ciselna_soustava>
+	# nacitani parametru <cilova_ciselna_soustava> od uzivatele
 	cilova_ciselna_soustava = zadejSoustava()
 
 	return cislo, cilova_ciselna_soustava
@@ -55,7 +54,7 @@ def zadejCislo():
 		try:
 			cislo = int(input('Zadejte kladne cele cislo: '))
 			return cislo
-		except:
+		except BaseException:
 			print('Spatny vstup. Zadejte pouze kladne cele cislo.')	
 
 
@@ -65,7 +64,7 @@ def zadejSoustava():
 			cilova_ciselna_soustava = int(input('Zadejte cilovou ciselnou soustavu (2..32): '))
 			if cilova_ciselna_soustava <= 32 and cilova_ciselna_soustava >= 2:
 				return cilova_ciselna_soustava
-		except:
+		except BaseException:
 			print('Spatny vstup. Zadejte cilovou ciselnou soustavu jako cele kladne cislo.')
 		else:
 			print('Spatny vstup. Zadejte cilovou ciselnou soustavu v rozsahu intervalu (2..32)')
