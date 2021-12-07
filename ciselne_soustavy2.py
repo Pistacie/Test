@@ -42,25 +42,35 @@ def nactiVstup():
 				print('Nespravne zadane parametry: <cislo> <cilova_ciselna_soustava>(2..32)')
 
 	# nacitani parametru <cislo> od uzivatele
+	cislo = zadejCislo()
+	
+
+	# nacitani parametru <cilova_ciselna_soustava>
+	cilova_ciselna_soustava = zadejSoustava()
+
+	return cislo, cilova_ciselna_soustava
+
+
+def zadejCislo():
 	while True:
 		try:
 			cislo = int(input('Zadejte kladne cele cislo: '))
-			break
+			return cislo
 		except:
-			print('Spatny vstup. Zadejte pouze kladne cele cislo.')
+			print('Spatny vstup. Zadejte pouze kladne cele cislo.')	
 
-	# nacitani parametru <cilova_ciselna_soustava>
+
+def zadejSoustava():
 	while True:
 		try:
 			cilova_ciselna_soustava = int(input('Zadejte cilovou ciselnou soustavu (2..32): '))
 			if cilova_ciselna_soustava <= 32 and cilova_ciselna_soustava >= 2:
-				break
+				return cilova_ciselna_soustava
 		except:
 			print('Spatny vstup. Zadejte cilovou ciselnou soustavu jako cele kladne cislo.')
 		else:
 			print('Spatny vstup. Zadejte cilovou ciselnou soustavu v rozsahu intervalu (2..32)')
 
-	return cislo, cilova_ciselna_soustava
 
 
 def preved(cislo: int, cilova_ciselna_soustava: int) -> str:
