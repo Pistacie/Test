@@ -37,4 +37,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --ignore W191 --statistics
     - name: Test with pytest
       run: |
-        pytest ciselne_soustavy2.py
+        pytest ciselne_soustavy_test.py
