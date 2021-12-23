@@ -9,7 +9,7 @@ def main():
 	Program prevede zadane cislo <cislo> z desitkove soustavy
 	do ciselne soustavy se zakladem <cilova_ciselna_soustava>.
 	'''
-	
+
 	cislo, cilova_ciselna_soustava = nactiVstup()
 
 	print(f'Zadane cislo: {cislo}, zaklad vybrane soustavy: {cilova_ciselna_soustava}, prevedene cislo: {preved(cislo, cilova_ciselna_soustava)}')  # noqa: E501
@@ -54,7 +54,7 @@ def zadejCislo():
 	'''
 	Metoda zadejCislo() nacte parametr <cislo>, ktere zada uzivatel, pri spatnem zadani vypise chybu a necha uzivatele opakovat
 	'''
-	
+
 	while True:
 		try:
 			cislo = int(input('Zadejte kladne cele cislo: '))
@@ -68,7 +68,8 @@ def zadejCislo():
 
 def zadejSoustava():
 	'''
-	Metoda zadejSoustava() nacte parametr <cilova_ciselna_soustava>, kterou zada uzivatel, pri spatnem zadani vypise chybu a necha uzivatele opakovat
+	Metoda zadejSoustava() nacte parametr <cilova_ciselna_soustava>, kterou zada uzivatel,
+	pri spatnem zadani vypise chybu a necha uzivatele opakovat
 	'''
 	while True:
 		try:
